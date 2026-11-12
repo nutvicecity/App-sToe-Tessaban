@@ -907,11 +907,20 @@ function closeApp(push=true){
   if(push && location.hash.startsWith('#app/')) history.pushState({},'',location.pathname+location.search);
 }
 
+/* ไฟล์ติดตั้งจริง (นอกนั้นเป็นข้อมูลจำลอง): คีย์ = รหัสแอป:แพลตฟอร์ม */
+const REAL_DL={
+  'water:android':{url:'downloads/TKT-WaterSmart-staff.apk',file:'TKT-WaterSmart-staff.apk',msg:'⬇️ กำลังดาวน์โหลดแอปเจ้าหน้าที่ประปา (Android) · ต้องติดตั้ง Tailscale และล็อกอินบัญชีเทศบาลก่อนใช้งาน'}
+};
+
 /* ===================== events ===================== */
 document.addEventListener('click',e=>{
   const t=e.target.closest('[data-app],[data-dept],[data-plat],[data-aud],[data-dept-f],[data-dl],[data-notify],[data-dev]');
   if(!t) return;
-  if(t.dataset.dl){ toast(`📦 นี่คือเว็บจำลอง ยังไม่มีไฟล์ติดตั้งจริงสำหรับ ${PLAT[t.dataset.dl].long}`); return; }
+  if(t.dataset.dl){
+    const real=REAL_DL[location.hash.slice(5)+':'+t.dataset.dl];
+    if(real){ const l=document.createElement('a'); l.href=real.url; l.download=real.file; document.body.appendChild(l); l.click(); l.remove(); toast(real.msg); return; }
+    toast(`📦 นี่คือเว็บจำลอง ยังไม่มีไฟล์ติดตั้งจริงสำหรับ ${PLAT[t.dataset.dl].long}`); return;
+  }
   if(t.dataset.notify){ toast(`🔔 เราจะแจ้งเตือนเมื่อ “${A[t.dataset.notify].name}” เปิดให้ใช้งาน`); return; }
   if(t.dataset.dev){ curDevice=t.dataset.dev; document.querySelectorAll('#dev-seg button').forEach(b=>b.classList.toggle('on',b===t)); renderShots(A[location.hash.slice(5)]||APPS[0]); return; }
   if(t.dataset.app){ e.preventDefault(); openApp(t.dataset.app); return; }
