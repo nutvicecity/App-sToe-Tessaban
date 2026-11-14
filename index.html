@@ -990,7 +990,7 @@ const rv=new IntersectionObserver(es=>es.forEach(en=>{ if(en.isIntersecting){ en
 /* ===================== เข้าสู่ระบบ — ใช้ระบบล็อกอินกลาง (Log in by Toe) =====================
    สโตร์ตัวนี้เป็นหน้าสถิต ไม่มีระบบบัญชีของตัวเองแล้ว ปุ่มนี้พาไปล็อกอินที่เซิร์ฟเวอร์ระบบกลาง
    แล้วไปที่หน้าแรกของระบบกลาง (/) ซึ่งเป็นสโตร์ฉบับที่รวมกับระบบล็อกอิน */
-const LOGIN_URL='https://login.167-172-66-22.sslip.io/login.html?next=%2F';
+const LOGIN_URL='https://login.167-172-66-22.sslip.io/login.html?next='+encodeURIComponent(location.origin+location.pathname+location.search+location.hash);
 $('#acct').innerHTML=`<a class="acct-btn" href="${LOGIN_URL}"><svg class="i" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2M12 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8z"/></svg><span class="lbl">เข้าสู่ระบบ</span></a>`;
 
 /* ===================== init ===================== */
