@@ -383,6 +383,120 @@ footer .wrap{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
   .tabbar a svg{font-size:21px}
   .tabbar a.on{color:var(--accent);background:var(--accent-soft)}
 }
+
+/* ---------- account / staff link ---------- */
+[hidden]{display:none!important}
+.nav a.ext{display:inline-flex;align-items:center;gap:4px;color:var(--accent);background:var(--accent-soft)}
+.nav a.ext:hover{background:var(--accent);color:#fff}
+.nav a.ext svg{font-size:13px}
+.acct{position:relative;flex:none}
+.acct-btn{height:40px;border-radius:12px;padding:0 14px;background:var(--text);color:var(--bg);font-weight:600;font-size:14.5px;display:inline-flex;align-items:center;gap:8px;white-space:nowrap;transition:.2s}
+.acct-btn:hover{transform:translateY(-1px);box-shadow:var(--shadow)}
+.acct-btn svg{font-size:17px}
+.acct-btn.me{padding:0;width:40px;border-radius:50%;background:none;box-shadow:0 0 0 2px var(--surface),0 0 0 4px var(--line)}
+.acct-btn.me:hover,.acct-btn.me[aria-expanded="true"]{box-shadow:0 0 0 2px var(--surface),0 0 0 4px var(--accent);transform:none}
+.av{display:block;border-radius:50%;overflow:hidden;flex:none;background:var(--surface-2);line-height:0}
+.av>svg,.av>img{width:100%;height:100%;display:block;object-fit:cover}
+.menu{position:absolute;right:0;top:calc(100% + 12px);width:280px;background:var(--surface);border:1px solid var(--line);border-radius:20px;box-shadow:var(--shadow-lg);padding:8px;opacity:0;visibility:hidden;transform:translateY(-6px) scale(.98);transform-origin:top right;transition:opacity .18s,transform .18s,visibility 0s .18s;z-index:50}
+.menu.open{opacity:1;visibility:visible;transform:none;transition-delay:0s}
+.menu-h{display:flex;align-items:center;gap:12px;padding:10px 10px 12px}
+.menu-h b{display:block;line-height:1.25;word-break:break-word}
+.menu-h small{color:var(--muted);font-size:13px}
+.menu hr{border:0;border-top:1px solid var(--line);margin:6px 4px}
+.menu button,.menu a{display:flex;align-items:center;gap:10px;width:100%;text-align:left;padding:10px 12px;border-radius:12px;font-size:15px;font-weight:500;color:var(--text)}
+.menu button:hover,.menu a:hover,.menu button:focus-visible,.menu a:focus-visible{background:var(--surface-2);outline:none}
+.menu svg{font-size:18px;color:var(--muted)}
+.menu a .x{margin-left:auto;display:inline-flex}
+.menu a .x svg{font-size:15px}
+
+.flink{display:inline-flex;align-items:center;gap:5px;color:var(--accent);font-weight:600}
+.flink svg{font-size:14px}
+
+/* staff gateway banner */
+.gate{margin-top:20px;border-radius:26px;padding:26px 28px;display:flex;align-items:center;gap:20px;justify-content:space-between;background:linear-gradient(120deg,#12121c 0%,#1f1b4d 55%,#3a2fc9 130%);color:#fff;position:relative;overflow:hidden;box-shadow:var(--shadow)}
+.gate::after{content:"";position:absolute;right:-60px;top:-80px;width:260px;height:260px;border-radius:50%;background:radial-gradient(closest-side,rgba(0,194,168,.35),transparent);pointer-events:none}
+.gate>*{position:relative;z-index:1}
+.gate .gl{display:flex;align-items:center;gap:18px;min-width:0}
+.gate .gic{width:58px;height:58px;border-radius:17px;background:rgba(255,255,255,.14);display:grid;place-items:center;font-size:27px;flex:none}
+.gate h3{margin:0 0 4px;font-size:21px;line-height:1.25}
+.gate p{margin:0;opacity:.8;max-width:540px;font-size:15px}
+.gate .btn{background:#fff;color:#111;flex:none}
+.gate .btn:hover{transform:translateY(-1px);box-shadow:0 10px 30px rgba(0,0,0,.35)}
+
+/* modals */
+.mscrim{position:fixed;inset:0;z-index:70;background:rgba(5,5,12,.55);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);opacity:0;pointer-events:none;transition:opacity .25s}
+.mscrim.open{opacity:1;pointer-events:auto}
+.modal{position:fixed;z-index:71;left:50%;top:50%;width:min(420px,calc(100% - 32px));max-height:calc(100dvh - 32px);overflow:auto;overscroll-behavior:contain;transform:translate(-50%,-46%) scale(.97);opacity:0;visibility:hidden;background:var(--surface);border:1px solid var(--line);border-radius:28px;box-shadow:var(--shadow-lg);transition:transform .3s cubic-bezier(.2,.8,.2,1),opacity .25s,visibility 0s .3s}
+.modal.open{transform:translate(-50%,-50%);opacity:1;visibility:visible;transition-delay:0s}
+.modal.wide{width:min(560px,calc(100% - 32px))}
+.m-body{padding:30px 28px 26px}
+.mclose{position:absolute;right:14px;top:14px;width:36px;height:36px;border-radius:50%;background:var(--surface-2);display:grid;place-items:center;font-size:17px;z-index:2}
+.mclose:hover{background:var(--line)}
+.m-brand{display:flex;justify-content:center;margin-bottom:12px}
+.m-brand .logo{width:52px;height:52px;border-radius:16px}
+.m-brand .logo span{width:38px;height:38px;border-radius:11px;font-size:16px}
+.modal h2{margin:0 0 6px;font-size:23px;line-height:1.25;text-align:center}
+.modal .wide h2,.modal.wide h2{text-align:left;font-size:22px}
+.m-sub{margin:0 0 18px;color:var(--muted);text-align:center;font-size:14.5px}
+.modal .seg{display:flex;margin-bottom:18px}
+.modal .seg button{flex:1;justify-content:center}
+.form label,.fld{display:block;font-size:13.5px;font-weight:600;margin-bottom:14px}
+.form input,.fld input{width:100%;height:46px;border-radius:12px;border:1px solid var(--line);background:var(--surface-2);padding:0 14px;margin-top:6px;outline:none;font-weight:400;font-size:16px;transition:.15s}
+.form input:focus,.fld input:focus{border-color:var(--accent);background:var(--surface);box-shadow:0 0 0 4px var(--accent-soft)}
+.pw{position:relative;display:block}
+.pw input{padding-right:46px}
+.eye{position:absolute;right:4px;bottom:4px;width:38px;height:38px;border-radius:10px;display:grid;place-items:center;color:var(--muted);font-size:18px}
+.eye.on{color:var(--accent)}
+.hint2{display:block;font-weight:400;color:var(--muted);font-size:12.5px;margin-top:5px}
+.err{min-height:20px;margin:-4px 0 10px;color:#e5484d;font-size:14px;font-weight:500}
+.btn.wide{width:100%;justify-content:center}
+.btn:disabled{opacity:.6;cursor:progress}
+.m-note{margin:16px 0 0;font-size:12.5px;color:var(--muted);text-align:center;line-height:1.5}
+.staffrow{display:flex;align-items:center;justify-content:center;gap:6px;margin-top:14px;padding:12px;border-radius:14px;background:var(--accent-soft);color:var(--accent);font-weight:600;font-size:14.5px;text-align:center}
+.staffrow:hover{background:var(--accent);color:#fff}
+.staffrow svg{font-size:15px}
+
+.p-top{display:flex;gap:18px;align-items:center;margin:14px 0 18px}
+.p-top .fld{flex:1;margin:0}
+.p-user{color:var(--muted);font-size:13.5px;margin-top:6px}
+#pPrev .av{box-shadow:0 0 0 3px var(--surface),0 0 0 5px var(--accent)}
+.av-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;padding:6px 4px 10px}
+.av-opt{position:relative;aspect-ratio:1;border-radius:50%;padding:0;display:block;transition:transform .15s,box-shadow .15s}
+.av-opt:hover{transform:scale(1.06)}
+.av-opt:focus-visible{outline:none;box-shadow:0 0 0 3px var(--surface),0 0 0 5px var(--accent)}
+.av-opt.sel{box-shadow:0 0 0 3px var(--surface),0 0 0 6px var(--accent)}
+.av-opt .tick{position:absolute;right:-2px;bottom:-2px;width:20px;height:20px;border-radius:50%;background:var(--accent);color:#fff;display:none;place-items:center;font-size:12px;border:2px solid var(--surface)}
+.av-opt.sel .tick{display:grid}
+.drop{display:grid;place-items:center;text-align:center;gap:6px;padding:28px 16px;border:2px dashed var(--line);border-radius:20px;cursor:pointer;color:var(--muted);transition:.15s;font-size:14.5px}
+.drop:hover,.drop.over{border-color:var(--accent);background:var(--accent-soft);color:var(--text)}
+.drop svg{font-size:28px;color:var(--accent)}
+.drop b{color:var(--text);font-size:15.5px}
+.drop input{display:none}
+.cropwrap{display:grid;justify-items:center;gap:12px}
+#pCanvas{width:240px;height:240px;max-width:100%;border-radius:20px;touch-action:none;cursor:grab;background:#fff}
+#pCanvas.grab{cursor:grabbing}
+.zoomrow{display:flex;align-items:center;gap:10px;width:240px;color:var(--muted);font-size:13px}
+.zoomrow input{flex:1;accent-color:var(--accent)}
+.row-btns{display:flex;gap:8px;flex-wrap:wrap;justify-content:center}
+.btn.sm{height:38px;padding:0 14px;font-size:14px;border-radius:12px}
+.pstate{margin:14px 0 0;color:var(--muted);font-size:13.5px;text-align:center}
+.m-actions{display:flex;gap:10px;justify-content:flex-end;margin-top:18px;padding-top:16px;border-top:1px solid var(--line)}
+
+@media (max-width:760px){
+  .menu{position:absolute;left:12px;right:12px;top:calc(100% + 8px);width:auto}
+  .acct{position:static}
+  .acct-btn:not(.me){width:40px;padding:0;justify-content:center}
+  .acct-btn .lbl{display:none}
+  .gate{flex-direction:column;align-items:flex-start;padding:22px}
+  .gate .btn{width:100%;justify-content:center}
+  .m-body{padding:26px 20px 22px}
+  .av-grid{grid-template-columns:repeat(4,1fr)}
+  .modal{max-height:calc(100dvh - 24px)}
+}
+@media (max-width:560px){
+  .brand>div:last-child{display:none}
+}
+@media (prefers-reduced-motion:reduce){.modal,.menu,.mscrim{transition:none!important}}
 </style>
 </head>
 <body>
@@ -399,6 +513,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
       <a href="#depts">หน่วยงาน</a>
       <a href="#all">แอปทั้งหมด</a>
       <a href="#overview">ภาพรวมผู้บริหาร</a>
+      <a class="ext" href="https://167-172-66-22.sslip.io/" target="_blank" rel="noopener noreferrer">ระบบเจ้าหน้าที่<svg class="i" viewBox="0 0 24 24"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
     </nav>
     <label class="search">
       <svg class="i" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
@@ -407,6 +522,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
     <button class="iconbtn" id="theme" aria-label="สลับโหมดสว่าง/มืด">
       <svg class="i" viewBox="0 0 24 24"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
     </button>
+    <div class="acct" id="acct"></div>
   </div>
 </header>
 
@@ -470,8 +586,9 @@ footer .wrap{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
 
   <section>
     <div class="wrap">
-      <div class="sec-h reveal"><div><h2>สำหรับเจ้าหน้าที่</h2><p>เครื่องมือทำงานภายในสำหรับเจ้าหน้าที่ ช่วยลดการใช้กระดาษ</p></div></div>
+      <div class="sec-h reveal"><div><h2>สำหรับเจ้าหน้าที่</h2><p>เครื่องมือทำงานภายในสำหรับเจ้าหน้าที่ ช่วยลดการใช้กระดาษ</p></div><a class="more flink" href="https://167-172-66-22.sslip.io/" target="_blank" rel="noopener noreferrer">เข้าระบบเจ้าหน้าที่<svg class="i" viewBox="0 0 24 24"><path d="M7 17L17 7M8 7h9v9"/></svg></a></div>
       <div class="shelf reveal" id="shelf-staff"></div>
+      <div class="gate reveal"><div class="gl"><div class="gic"><svg class="i" viewBox="0 0 24 24"><path d="M3 21h18M5 21V8l7-5 7 5v13M9 21v-6h6v6"/></svg></div><div><h3>ระบบเจ้าหน้าที่</h3><p>สำหรับเจ้าหน้าที่เทศบาลตำบลท่าคันโท เข้าสู่ระบบงานภายในได้จากที่นี่ (เปิดในแท็บใหม่)</p></div></div><a class="btn" href="https://167-172-66-22.sslip.io/" target="_blank" rel="noopener noreferrer">เปิดระบบเจ้าหน้าที่<svg class="i" viewBox="0 0 24 24"><path d="M7 17L17 7M8 7h9v9"/></svg></a></div>
     </div>
   </section>
 
@@ -505,10 +622,11 @@ footer .wrap{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
     <div>
       <div class="brand" style="margin-bottom:10px"><div class="logo"><span>TK</span></div><div><b style="color:var(--text)">ท่าคันโท สโตร์</b><small>เทศบาลตำบลท่าคันโท</small></div></div>
       <div>ศูนย์รวมแอปพลิเคชันสำหรับประชาชนและเจ้าหน้าที่</div>
+      <div style="margin-top:8px"><a class="flink" href="https://167-172-66-22.sslip.io/" target="_blank" rel="noopener noreferrer">ระบบเจ้าหน้าที่<svg class="i" viewBox="0 0 24 24"><path d="M7 17L17 7M8 7h9v9"/></svg></a></div>
     </div>
     <div style="max-width:440px">
       <span class="proto">⚠︎ เว็บต้นแบบเพื่อนำเสนอผู้บริหาร</span>
-      <p style="margin:10px 0 0">แอป ยอดดาวน์โหลด คะแนน และรีวิวทั้งหมดในหน้านี้เป็นข้อมูลจำลอง ยังไม่มีไฟล์ติดตั้งจริง</p>
+      <p style="margin:10px 0 0">แอป ยอดดาวน์โหลด คะแนน และรีวิวทั้งหมดในหน้านี้เป็นข้อมูลจำลอง ยังไม่มีไฟล์ติดตั้งจริง บัญชีผู้ใช้เป็นการสาธิต เก็บในเบราว์เซอร์เครื่องนี้เท่านั้น</p>
     </div>
   </div>
 </footer>
@@ -526,6 +644,79 @@ footer .wrap{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
   <button class="close" id="close" aria-label="ปิด"><svg class="i" viewBox="0 0 24 24"><path d="M18 6L6 18M6 6l12 12"/></svg></button>
   <div class="body" id="sheet-body"></div>
 </div>
+<div class="mscrim" id="mscrim"></div>
+
+<div class="modal" id="authModal" role="dialog" aria-modal="true" aria-labelledby="authTitle">
+  <button class="mclose" type="button" data-mclose aria-label="ปิด"><svg class="i" viewBox="0 0 24 24"><path d="M18 6L6 18M6 6l12 12"/></svg></button>
+  <div class="m-body">
+    <div class="m-brand"><div class="logo"><span>TK</span></div></div>
+    <h2 id="authTitle">เข้าสู่ท่าคันโท สโตร์</h2>
+    <p class="m-sub">มีโปรไฟล์ของคุณเอง พร้อมรูปโปรไฟล์และอวตาร์</p>
+    <div class="seg" role="tablist">
+      <button type="button" role="tab" data-tab="login" class="on" aria-selected="true">เข้าสู่ระบบ</button>
+      <button type="button" role="tab" data-tab="signup" aria-selected="false">สมัครสมาชิก</button>
+    </div>
+    <form id="loginForm" class="form" novalidate>
+      <label>ชื่อผู้ใช้<input name="username" autocomplete="username" autocapitalize="none" spellcheck="false" required></label>
+      <label>รหัสผ่าน<span class="pw"><input name="password" type="password" autocomplete="current-password" required><button type="button" class="eye" data-eye aria-label="แสดงรหัสผ่าน"><svg class="i" viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8S1 12 1 12zM12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg></button></span></label>
+      <p class="err" role="alert"></p>
+      <button class="btn btn-primary wide" type="submit">เข้าสู่ระบบ</button>
+    </form>
+    <form id="signupForm" class="form" hidden novalidate>
+      <label>ชื่อที่แสดง<input name="name" autocomplete="name" maxlength="40" required></label>
+      <label>ชื่อผู้ใช้<input name="username" autocomplete="username" autocapitalize="none" spellcheck="false" maxlength="24" required><span class="hint2">a-z, 0-9, . _ - ยาว 3–24 ตัว</span></label>
+      <label>รหัสผ่าน<span class="pw"><input name="password" type="password" autocomplete="new-password" maxlength="128" required><button type="button" class="eye" data-eye aria-label="แสดงรหัสผ่าน"><svg class="i" viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8S1 12 1 12zM12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg></button></span><span class="hint2">อย่างน้อย 8 ตัวอักษร</span></label>
+      <label>ยืนยันรหัสผ่าน<input name="confirm" type="password" autocomplete="new-password" maxlength="128" required></label>
+      <p class="err" role="alert"></p>
+      <button class="btn btn-primary wide" type="submit">สมัครสมาชิก</button>
+    </form>
+    <p class="m-note">บัญชีนี้ใช้เฉพาะท่าคันโท สโตร์ (เว็บต้นแบบ)<br>ข้อมูลเก็บในเบราว์เซอร์เครื่องนี้เท่านั้น ไม่ได้ส่งไปที่ใด</p>
+    <a class="staffrow" href="https://167-172-66-22.sslip.io/" target="_blank" rel="noopener noreferrer">เจ้าหน้าที่เทศบาล? เข้าระบบเจ้าหน้าที่<svg class="i" viewBox="0 0 24 24"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+  </div>
+</div>
+
+<div class="modal wide" id="profModal" role="dialog" aria-modal="true" aria-labelledby="profTitle">
+  <button class="mclose" type="button" data-mclose aria-label="ปิด"><svg class="i" viewBox="0 0 24 24"><path d="M18 6L6 18M6 6l12 12"/></svg></button>
+  <div class="m-body">
+    <h2 id="profTitle">โปรไฟล์ของฉัน</h2>
+    <div class="p-top">
+      <div id="pPrev"></div>
+      <div style="flex:1;min-width:0">
+        <label class="fld">ชื่อที่แสดง<input id="pName" maxlength="40" autocomplete="off"></label>
+        <div class="p-user" id="pUser"></div>
+      </div>
+    </div>
+    <div class="seg" role="tablist">
+      <button type="button" role="tab" data-ptab="avatars" class="on" aria-selected="true">เลือกอวตาร์ (20)</button>
+      <button type="button" role="tab" data-ptab="upload" aria-selected="false">อัปโหลดรูป</button>
+    </div>
+    <div id="pAvatars" class="av-grid"></div>
+    <div id="pUpload" hidden>
+      <label class="drop" id="pDrop">
+        <svg class="i" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M17 8l-5-5-5 5M12 3v12"/></svg>
+        <b>เลือกรูปจากเครื่อง หรือลากรูปมาวางที่นี่</b>
+        <span>PNG, JPG, WebP · ไม่เกิน 15 MB · ระบบจะตัดเป็นรูปวงกลม</span>
+        <input type="file" id="pFile" accept="image/png,image/jpeg,image/webp">
+      </label>
+      <div class="cropwrap" id="pCropWrap" hidden>
+        <canvas id="pCanvas" width="240" height="240" aria-label="จัดตำแหน่งรูป ลากเพื่อเลื่อน"></canvas>
+        <div class="zoomrow"><span>ซูม</span><input type="range" id="pZoom" min="100" max="300" value="100" aria-label="ซูมรูป"></div>
+        <div class="row-btns">
+          <button type="button" class="btn btn-ghost sm" id="pCropCancel">เลือกรูปใหม่</button>
+          <button type="button" class="btn btn-primary sm" id="pCropApply">ใช้รูปนี้</button>
+        </div>
+      </div>
+      <p class="pstate" id="pPhotoState"></p>
+      <div class="row-btns" style="margin-top:8px"><button type="button" class="btn btn-ghost sm" id="pRemove" hidden>ลบรูปที่อัปโหลด</button></div>
+    </div>
+    <p class="err" id="pErr" role="alert" style="margin-top:12px"></p>
+    <div class="m-actions">
+      <button type="button" class="btn btn-ghost" data-mclose>ยกเลิก</button>
+      <button type="button" class="btn btn-primary" id="pSave">บันทึก</button>
+    </div>
+  </div>
+</div>
+
 <div class="toast" id="toast"></div>
 
 <script>
@@ -945,6 +1136,377 @@ secs.forEach(s=>s&&spy.observe(s));
 // reveal + bars animation
 const rv=new IntersectionObserver(es=>es.forEach(en=>{ if(en.isIntersecting){ en.target.classList.add('in');
   en.target.querySelectorAll('.fill').forEach(f=>f.style.width=f.dataset.w+'%'); rv.unobserve(en.target);} }),{threshold:.12});
+
+/* ===================== บัญชีผู้ใช้ (ต้นแบบ: เก็บในเบราว์เซอร์เครื่องนี้เท่านั้น ไม่มีเซิร์ฟเวอร์) ===================== */
+const Acct=(()=>{
+  const STAFF_URL='https://167-172-66-22.sslip.io/';
+  const K_USERS='tkt.store.users.v1', K_SESS='tkt.store.session.v1';
+
+  /* ---------- อวตาร์ 20 แบบ (SVG วาดเอง) ---------- */
+  const SK={l:'#f6d5b8',m:'#e9b88c',t:'#d29a68',b:'#b27849',d:'#8a5834',x:'#664126'};
+  const frame=(bg,inner)=>`<svg viewBox="0 0 100 100" aria-hidden="true" focusable="false"><rect width="100" height="100" fill="${bg}"/><circle cx="80" cy="18" r="30" fill="#fff" opacity=".16"/>${inner}</svg>`;
+
+  function person(o){
+    const s=o.skin,h=o.hair,hs=o.hs||'short',acc=o.acc||[];
+    const has=n=>acc.includes(n);
+    const fr=`<path d="M31 46c-2-19 8-28 19-28s21 9 19 28c-3-8-9-12-19-12s-16 4-19 12z" fill="${h}"/>`;
+    let back='',front='';
+    switch(hs){
+      case 'short': front=fr; break;
+      case 'long': back=`<path d="M27 52c-4-24 8-35 23-35s27 11 23 35v26H27z" fill="${h}"/>`; front=fr; break;
+      case 'bob': back=`<path d="M28 48c-3-22 8-31 22-31s25 9 22 31v13H28z" fill="${h}"/>`; front=fr; break;
+      case 'bun': back=`<circle cx="50" cy="13" r="8" fill="${h}"/>`; front=fr; break;
+      case 'pony': back=`<path d="M66 34c15-1 19 17 8 34-1-11-4-17-9-21z" fill="${h}"/>`; front=fr; break;
+      case 'afro': back=`<g fill="${h}"><circle cx="29" cy="42" r="11"/><circle cx="38" cy="27" r="13"/><circle cx="62" cy="27" r="13"/><circle cx="71" cy="42" r="11"/><circle cx="50" cy="22" r="13"/></g>`; front=`<path d="M32 43c2-9 10-13 18-13s16 4 18 13c-4-4-10-7-18-7s-14 3-18 7z" fill="${h}"/>`; break;
+      case 'spiky': front=`<path d="M30 46l-3-17 10 7 3-15 9 11 9-11 3 15 10-7-3 17c-3-9-9-13-19-13s-16 4-19 13z" fill="${h}"/>`; break;
+      case 'side': front=`<path d="M31 46c-3-20 9-29 20-28 12 1 21 9 18 28-1-6-4-10-8-12-9 4-18 4-26 0-2 2-3 7-4 12z" fill="${h}"/>`; break;
+      case 'bald': break;
+    }
+    let a='';
+    if(has('hardhat')) a+=`<path d="M30 40c0-13 9-21 20-21s20 8 20 21z" fill="#ffb703"/><rect x="26" y="38" width="48" height="6" rx="3" fill="#fb8500"/><rect x="46" y="17" width="8" height="10" rx="3" fill="#fb8500"/>`;
+    if(has('nurse')) a+=`<path d="M32 38c0-11 8-17 18-17s18 6 18 17z" fill="#fff" stroke="#e5e7eb" stroke-width="1"/><rect x="48" y="25" width="4" height="10" rx="1" fill="#ef4444"/><rect x="45" y="28" width="10" height="4" rx="1" fill="#ef4444"/>`;
+    const cap=acc.find(x=>x.startsWith('cap:'));
+    if(cap){const c=cap.slice(4); a+=`<path d="M30 41c0-14 9-22 20-22s20 8 20 22z" fill="${c}"/><path d="M28 41h54c0 4-5 6-10 6H30z" fill="${c}"/><path d="M28 41h54c0 4-5 6-10 6H30z" fill="#000" opacity=".22"/>`;}
+    if(has('headset')) a+=`<path d="M30 48c0-16 8-24 20-24s20 8 20 24" fill="none" stroke="#1f2937" stroke-width="3"/><rect x="26" y="44" width="7" height="13" rx="3" fill="#1f2937"/><rect x="67" y="44" width="7" height="13" rx="3" fill="#1f2937"/><path d="M33 58q3 8 12 8" fill="none" stroke="#1f2937" stroke-width="2"/><circle cx="46" cy="66" r="2.6" fill="#1f2937"/>`;
+    if(has('glasses')) a+=`<g fill="#bfe9ff" fill-opacity=".35" stroke="#1f2937" stroke-width="1.8"><circle cx="43" cy="49" r="6"/><circle cx="57" cy="49" r="6"/></g><path d="M49 49h2" stroke="#1f2937" stroke-width="1.8"/>`;
+    if(has('earrings')) a+=`<circle cx="31.5" cy="56" r="2" fill="#fbbf24"/><circle cx="68.5" cy="56" r="2" fill="#fbbf24"/>`;
+    const beard=has('beard')?`<path d="M31 52c0 14 8 20 19 20s19-6 19-20c-3 6-8 8-19 8s-16-2-19-8z" fill="${h}"/>`:'';
+    const must=has('mustache')?`<path d="M41 56q4-3 9 0 5-3 9 0-4 5-9 2-5 3-9-2z" fill="${h}"/>`:'';
+    const tie=has('tie')?`<path d="M45 75h10l-2 5h-6z" fill="#9b0d17"/><path d="M47 80h6l2 16-5 4-5-4z" fill="#c1121f"/>`:'';
+    const mouth=o.grin?`<path d="M43 56.5h14q-1 8-7 8t-7-8z" fill="#7a3b2e"/><path d="M45 56.5h10v2.5H45z" fill="#fff"/>`:`<path d="M43.5 57.5q6.5 6 13 0" fill="none" stroke="#7a3b2e" stroke-width="2" stroke-linecap="round"/>`;
+    const collar=o.collar?`<path d="M42 73l8 9 8-9" fill="none" stroke="${o.collar}" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>`:'';
+    return frame(o.bg,`${back}
+      <path d="M12 100c0-17 15-27 38-27s38 10 38 27z" fill="${o.shirt}"/>
+      <path d="M43 61h14v12l-7 11-7-11z" fill="${s}"/><path d="M43 68q7 6 14 0v-7H43z" fill="#000" opacity=".12"/>${collar}${tie}
+      <circle cx="31.5" cy="49" r="4" fill="${s}"/><circle cx="68.5" cy="49" r="4" fill="${s}"/>
+      <ellipse cx="50" cy="47" rx="19" ry="21" fill="${s}"/>${beard}
+      <circle cx="43" cy="49" r="2.3" fill="#2a2a35"/><circle cx="57" cy="49" r="2.3" fill="#2a2a35"/>
+      <circle cx="37.5" cy="55" r="3.2" fill="#ff7a7a" opacity=".22"/><circle cx="62.5" cy="55" r="3.2" fill="#ff7a7a" opacity=".22"/>${mouth}${must}${front}${a}`);
+  }
+
+  const eyes=(y=48,dx=8)=>`<circle cx="${50-dx}" cy="${y}" r="2.6" fill="#2a2a35"/><circle cx="${50+dx}" cy="${y}" r="2.6" fill="#2a2a35"/>`;
+  const animals={
+    cat:()=>frame('#fcd5ce',`<path d="M24 46l2-28 20 13z" fill="#f4a259"/><path d="M76 46l-2-28-20 13z" fill="#f4a259"/><path d="M29 38l1-12 9 6z M71 38l-1-12-9 6z" fill="#f9c6c9"/>
+      <path d="M20 100c2-16 14-22 30-22s28 6 30 22z" fill="#f4a259"/><ellipse cx="50" cy="55" rx="28" ry="24" fill="#f4a259"/>
+      <path d="M50 32v8M42 33l2 7M58 33l-2 7" stroke="#d9822b" stroke-width="3" stroke-linecap="round"/>
+      <ellipse cx="50" cy="63" rx="13" ry="9" fill="#fde4cf"/>${eyes(52,11)}<path d="M46 59h8l-4 4z" fill="#e5446d"/>
+      <path d="M50 63q-3 5-8 3M50 63q3 5 8 3" fill="none" stroke="#7a3b2e" stroke-width="1.8" stroke-linecap="round"/>
+      <path d="M30 58l-12-2M30 63l-12 3M70 58l12-2M70 63l12 3" stroke="#fff" stroke-width="1.4" stroke-linecap="round" opacity=".9"/>`),
+    dog:()=>frame('#bae6fd',`<path d="M20 100c2-16 14-22 30-22s28 6 30 22z" fill="#d9a066"/>
+      <ellipse cx="27" cy="50" rx="9" ry="19" fill="#8a5a2b" transform="rotate(12 27 50)"/><ellipse cx="73" cy="50" rx="9" ry="19" fill="#8a5a2b" transform="rotate(-12 73 50)"/>
+      <ellipse cx="50" cy="52" rx="24" ry="26" fill="#d9a066"/><path d="M50 27c-7 0-9 8-9 14h18c0-6-2-14-9-14z" fill="#8a5a2b" opacity=".85"/>
+      <ellipse cx="50" cy="62" rx="13" ry="10" fill="#f6dcc0"/>${eyes(48,10)}<ellipse cx="50" cy="57" rx="5" ry="3.4" fill="#2a2a35"/>
+      <path d="M50 60v4M50 64q-4 4-8 1M50 64q4 4 8 1" fill="none" stroke="#2a2a35" stroke-width="1.8" stroke-linecap="round"/><path d="M47 66q3 8 6 0z" fill="#ff7a8a"/>`),
+    elephant:()=>frame('#fde68a',`<path d="M18 100c2-16 14-22 32-22s30 6 32 22z" fill="#9aa5b1"/>
+      <circle cx="22" cy="48" r="18" fill="#9aa5b1"/><circle cx="78" cy="48" r="18" fill="#9aa5b1"/><circle cx="23" cy="48" r="11" fill="#f4b8c4"/><circle cx="77" cy="48" r="11" fill="#f4b8c4"/>
+      <circle cx="50" cy="48" r="24" fill="#b8c2cc"/>${eyes(44,11)}
+      <path d="M50 56v22q0 9 8 9t6-9" fill="none" stroke="#b8c2cc" stroke-width="13" stroke-linecap="round"/><path d="M45 60q5 3 10 0" fill="none" stroke="#9aa5b1" stroke-width="1.6" opacity=".7"/>
+      <path d="M38 62q-3 9 2 14M62 62q3 9-2 14" fill="none" stroke="#fff" stroke-width="4.5" stroke-linecap="round"/>`),
+    owl:()=>frame('#ddd6fe',`<path d="M26 40l-4-20 18 10zM74 40l4-20-18 10z" fill="#6d4c41"/><ellipse cx="50" cy="62" rx="31" ry="34" fill="#8d6e63"/>
+      <ellipse cx="50" cy="74" rx="19" ry="22" fill="#d7b9a3"/><path d="M40 68q3 3 6 0M54 68q3 3 6 0M40 78q3 3 6 0M54 78q3 3 6 0M47 88q3 3 6 0" fill="none" stroke="#8d6e63" stroke-width="1.6" stroke-linecap="round"/>
+      <circle cx="38" cy="46" r="12" fill="#fff7e6"/><circle cx="62" cy="46" r="12" fill="#fff7e6"/><circle cx="38" cy="46" r="6.5" fill="#2a2a35"/><circle cx="62" cy="46" r="6.5" fill="#2a2a35"/><circle cx="40" cy="44" r="2" fill="#fff"/><circle cx="64" cy="44" r="2" fill="#fff"/>
+      <path d="M46 54h8l-4 9z" fill="#ffb703"/>`),
+    robot:()=>frame('#a7f3d0',`<path d="M50 14v10" stroke="#78909c" stroke-width="3" stroke-linecap="round"/><circle cx="50" cy="12" r="4.5" fill="#ff5c8a"/>
+      <rect x="30" y="76" width="40" height="30" rx="9" fill="#90a4ae"/><rect x="42" y="82" width="16" height="10" rx="3" fill="#cfd8dc"/>
+      <rect x="17" y="43" width="8" height="15" rx="4" fill="#78909c"/><rect x="75" y="43" width="8" height="15" rx="4" fill="#78909c"/>
+      <rect x="23" y="24" width="54" height="50" rx="14" fill="#cfd8dc"/><rect x="31" y="35" width="38" height="22" rx="8" fill="#263238"/>
+      <rect x="36" y="41" width="9" height="10" rx="3" fill="#22d3ee"/><rect x="55" y="41" width="9" height="10" rx="3" fill="#22d3ee"/>
+      <path d="M39 65h22M44 62v6M50 62v6M56 62v6" stroke="#78909c" stroke-width="2" stroke-linecap="round"/>`),
+    frog:()=>frame('#fecdd3',`<path d="M18 100c2-15 14-21 32-21s30 6 32 21z" fill="#6bbf5e"/>
+      <ellipse cx="50" cy="58" rx="31" ry="22" fill="#7bc96f"/><circle cx="33" cy="36" r="11" fill="#7bc96f"/><circle cx="67" cy="36" r="11" fill="#7bc96f"/>
+      <circle cx="33" cy="36" r="8" fill="#fff"/><circle cx="67" cy="36" r="8" fill="#fff"/><circle cx="34" cy="37" r="4.2" fill="#2a2a35"/><circle cx="66" cy="37" r="4.2" fill="#2a2a35"/>
+      <path d="M30 62q20 16 40 0" fill="none" stroke="#2f6b2a" stroke-width="2.4" stroke-linecap="round"/><circle cx="46" cy="52" r="1.3" fill="#2f6b2a"/><circle cx="54" cy="52" r="1.3" fill="#2f6b2a"/>
+      <circle cx="30" cy="58" r="4" fill="#ff7a7a" opacity=".3"/><circle cx="70" cy="58" r="4" fill="#ff7a7a" opacity=".3"/>`)
+  };
+
+  const AVATARS=[
+    {id:'a01',name:'ช่างโยธา',svg:person({bg:'#14b8a6',skin:SK.m,hair:'#2b2118',hs:'short',shirt:'#fb923c',acc:['hardhat'],collar:'#fff'})},
+    {id:'a02',name:'พยาบาล',svg:person({bg:'#f9a8d4',skin:SK.l,hair:'#4a2c1a',hs:'bob',shirt:'#5eead4',acc:['nurse'],grin:1})},
+    {id:'a03',name:'คุณครู',svg:person({bg:'#818cf8',skin:SK.t,hair:'#1f1a17',hs:'bob',shirt:'#3b82f6',acc:['glasses'],collar:'#fff'})},
+    {id:'a04',name:'ผู้ใหญ่บ้าน',svg:person({bg:'#fbbf24',skin:SK.b,hair:'#9ca3af',hs:'short',shirt:'#16a34a',acc:['mustache'],collar:'#fff'})},
+    {id:'a05',name:'นักพัฒนา',svg:person({bg:'#312e81',skin:SK.l,hair:'#1f2937',hs:'spiky',shirt:'#a855f7',acc:['headset']})},
+    {id:'a06',name:'ชาวสวน',svg:person({bg:'#bef264',skin:SK.d,hair:'#2b2118',hs:'short',shirt:'#facc15',acc:['cap:#16a34a'],grin:1})},
+    {id:'a07',name:'คุณยาย',svg:person({bg:'#fda4af',skin:SK.m,hair:'#d1d5db',hs:'bun',shirt:'#d946ef',acc:['glasses']})},
+    {id:'a08',name:'นักเรียน',svg:person({bg:'#7dd3fc',skin:SK.t,hair:'#1f1a17',hs:'side',shirt:'#f8fafc',acc:[],collar:'#2563eb',grin:1})},
+    {id:'a09',name:'ผมยาวสุดเท่',svg:person({bg:'#fdba74',skin:SK.m,hair:'#7c3f1d',hs:'long',shirt:'#ef4444',acc:['earrings']})},
+    {id:'a10',name:'ผมหยิก',svg:person({bg:'#c4b5fd',skin:SK.x,hair:'#1a1412',hs:'afro',shirt:'#06b6d4',acc:[],grin:1})},
+    {id:'a11',name:'หนวดเท่',svg:person({bg:'#a7f3d0',skin:SK.l,hair:'#3b2a20',hs:'side',shirt:'#1e3a8a',acc:['beard','glasses']})},
+    {id:'a12',name:'หางม้า',svg:person({bg:'#fde68a',skin:SK.b,hair:'#1f1a17',hs:'pony',shirt:'#15803d',acc:[],grin:1})},
+    {id:'a13',name:'หัวโล้น',svg:person({bg:'#bae6fd',skin:SK.d,hair:'#3b2a20',hs:'bald',shirt:'#ea580c',acc:['mustache']})},
+    {id:'a14',name:'ผู้บริหาร',svg:person({bg:'#cbd5e1',skin:SK.l,hair:'#374151',hs:'side',shirt:'#111827',acc:['glasses','tie'],collar:'#fff'})},
+    {id:'a15',name:'แมวส้ม',svg:animals.cat()},
+    {id:'a16',name:'น้องหมา',svg:animals.dog()},
+    {id:'a17',name:'ช้างน้อย',svg:animals.elephant()},
+    {id:'a18',name:'นกฮูก',svg:animals.owl()},
+    {id:'a19',name:'หุ่นยนต์',svg:animals.robot()},
+    {id:'a20',name:'กบเขียว',svg:animals.frog()},
+  ];
+  const AV_BY=Object.create(null); AVATARS.forEach(a=>AV_BY[a.id]=a);
+  const PHOTO_RE=/^data:image\/jpeg;base64,[A-Za-z0-9+\/=]+$/;
+  const cleanAv=a=>{
+    if(a&&a.type==='photo'&&typeof a.data==='string'&&a.data.length<400000&&PHOTO_RE.test(a.data)) return {type:'photo',data:a.data};
+    if(a&&a.type==='preset'&&typeof a.id==='string'&&AV_BY[a.id]) return {type:'preset',id:a.id};
+    return {type:'preset',id:'a01'};
+  };
+  const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  const avHTML=(a,size)=>{a=cleanAv(a);const inner=a.type==='photo'?`<img src="${a.data}" alt="" draggable="false">`:AV_BY[a.id].svg;return `<span class="av" style="width:${size};height:${size}">${inner}</span>`};
+  const randomPreset=()=>({type:'preset',id:AVATARS[Math.floor(Math.random()*AVATARS.length)].id});
+
+  /* ---------- ที่เก็บข้อมูล (localStorage; ถ้าใช้ไม่ได้ เก็บในหน่วยความจำชั่วคราว) ---------- */
+  const mem={}; let lsOk=true;
+  try{localStorage.setItem('__t','1');localStorage.removeItem('__t')}catch(e){lsOk=false}
+  const sget=k=>{if(!lsOk)return mem[k]??null;try{return localStorage.getItem(k)}catch(e){return null}};
+  const sset=(k,v)=>{if(!lsOk){mem[k]=v;return true}try{localStorage.setItem(k,v);return true}catch(e){return false}};
+  const sdel=k=>{if(!lsOk){delete mem[k];return}try{localStorage.removeItem(k)}catch(e){}};
+  const readUsers=()=>{const u=Object.create(null);try{const p=JSON.parse(sget(K_USERS)||'{}');if(p&&typeof p==='object')for(const k of Object.keys(p))u[k]=p[k]}catch(e){}return u};
+  const writeUsers=u=>sset(K_USERS,JSON.stringify(u));
+  const me=()=>{const n=sget(K_SESS);return n?(readUsers()[n]||null):null};
+
+  /* ---------- รหัสผ่าน: PBKDF2 + salt (ต้นแบบ — ข้อมูลอยู่ในเครื่องผู้ใช้ ไม่ใช่ระบบจริง) ---------- */
+  const b64=bytes=>btoa(String.fromCharCode(...bytes));
+  const unb64=s=>Uint8Array.from(atob(s),c=>c.charCodeAt(0));
+  const rand=n=>{const a=new Uint8Array(n);crypto.getRandomValues(a);return a};
+  async function hashPw(pw,saltB64){
+    if(window.crypto&&crypto.subtle){
+      const key=await crypto.subtle.importKey('raw',new TextEncoder().encode(pw),'PBKDF2',false,['deriveBits']);
+      const bits=await crypto.subtle.deriveBits({name:'PBKDF2',hash:'SHA-256',salt:unb64(saltB64),iterations:150000},key,256);
+      return 'p1$'+b64(new Uint8Array(bits));
+    }
+    // สำรองสำหรับเปิดผ่าน http ธรรมดาที่ไม่มี crypto.subtle (ไม่ปลอดภัย ใช้เพื่อสาธิตเท่านั้น)
+    let h=0x811c9dc5>>>0;const s=saltB64+'|'+pw;
+    for(let r=0;r<2000;r++)for(let i=0;i<s.length;i++){h^=s.charCodeAt(i);h=Math.imul(h,16777619)>>>0}
+    return 'f1$'+h.toString(16);
+  }
+  const clean=s=>String(s||'').trim().replace(/\s+/g,' ').slice(0,40);
+  const normUser=s=>String(s||'').trim().toLowerCase();
+  const fails=Object.create(null);
+  const DUMMY_SALT=b64(rand(16));
+
+  async function register({name,username,password}){
+    name=clean(name); username=normUser(username); password=String(password||'');
+    if(!name) throw new Error('กรอกชื่อที่แสดง');
+    if(!/^[a-z0-9._-]{3,24}$/.test(username)) throw new Error('ชื่อผู้ใช้ใช้ได้เฉพาะ a-z, 0-9, . _ - ยาว 3–24 ตัว');
+    if(password.length<8) throw new Error('รหัสผ่านต้องยาวอย่างน้อย 8 ตัวอักษร');
+    if(password.length>128) throw new Error('รหัสผ่านยาวเกิน 128 ตัวอักษร');
+    if(password.toLowerCase()===username) throw new Error('รหัสผ่านต้องไม่เหมือนชื่อผู้ใช้');
+    if(readUsers()[username]) throw new Error('ชื่อผู้ใช้นี้ถูกใช้แล้ว');
+    const salt=b64(rand(16)), hash=await hashPw(password,salt);
+    const users=readUsers();
+    if(users[username]) throw new Error('ชื่อผู้ใช้นี้ถูกใช้แล้ว');
+    users[username]={name,username,salt,hash,avatar:randomPreset(),createdAt:Date.now()};
+    if(!writeUsers(users)) throw new Error('บันทึกบัญชีไม่ได้ (เบราว์เซอร์ปิดการเก็บข้อมูลหรือพื้นที่เต็ม)');
+    sset(K_SESS,username);
+    return users[username];
+  }
+  async function login(username,password){
+    username=normUser(username); password=String(password||'');
+    const f=fails[username];
+    if(f&&f.until>Date.now()) throw new Error(`ลองผิดหลายครั้ง ลองใหม่ใน ${Math.ceil((f.until-Date.now())/1000)} วินาที`);
+    const u=readUsers()[username];
+    const ok=u?(await hashPw(password,u.salt))===u.hash:(await hashPw(password,DUMMY_SALT),false);
+    if(!u||!ok){
+      const x=fails[username]||(fails[username]={n:0,until:0});
+      if(++x.n>=5){x.until=Date.now()+60000;x.n=0}
+      throw new Error('ชื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง');
+    }
+    delete fails[username];
+    sset(K_SESS,username);
+    return u;
+  }
+  const logout=()=>sdel(K_SESS);
+
+  /* ---------- ส่วนหัว: ปุ่มเข้าสู่ระบบ / เมนูบัญชี ---------- */
+  const UI={
+    user:'M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2M12 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8z',
+    out:'M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4M16 17l5-5-5-5M21 12H9',
+    ext:'M7 17L17 7M8 7h9v9',
+    build:'M3 21h18M5 21V8l7-5 7 5v13M9 21v-6h6v6'
+  };
+  const ic=p=>`<svg class="i" viewBox="0 0 24 24"><path d="${p}"/></svg>`;
+  const box=$('#acct');
+  function render(){
+    const u=me();
+    if(!u){box.innerHTML=`<button class="acct-btn" type="button" data-a="login">${ic(UI.user)}<span class="lbl">เข้าสู่ระบบ</span></button>`;return}
+    box.innerHTML=`<button class="acct-btn me" type="button" data-a="menu" aria-haspopup="menu" aria-expanded="false" aria-label="บัญชีของ ${esc(u.name)}">${avHTML(u.avatar,'40px')}</button>
+      <div class="menu" id="acctMenu" role="menu">
+        <div class="menu-h">${avHTML(u.avatar,'46px')}<div><b>${esc(u.name)}</b><small>@${esc(u.username)}</small></div></div>
+        <button type="button" role="menuitem" data-a="profile">${ic(UI.user)}โปรไฟล์ของฉัน</button>
+        <a role="menuitem" href="${STAFF_URL}" target="_blank" rel="noopener noreferrer">${ic(UI.build)}ระบบเจ้าหน้าที่<span class="x">${ic(UI.ext)}</span></a>
+        <hr>
+        <button type="button" role="menuitem" data-a="logout">${ic(UI.out)}ออกจากระบบ</button>
+      </div>`;
+  }
+  const menuEl=()=>$('#acctMenu');
+  function setMenu(open){
+    const m=menuEl(),b=box.querySelector('[data-a="menu"]'); if(!m||!b) return;
+    m.classList.toggle('open',open); b.setAttribute('aria-expanded',String(open));
+    if(open) setTimeout(()=>m.querySelector('[role=menuitem]')?.focus(),30);
+  }
+  const closeMenu=()=>setMenu(false);
+  box.addEventListener('click',e=>{
+    const t=e.target.closest('[data-a]'); if(!t) return;
+    const a=t.dataset.a;
+    if(a==='login') openAuth('login');
+    else if(a==='menu') setMenu(!menuEl().classList.contains('open'));
+    else if(a==='profile'){closeMenu();openProfile('avatars')}
+    else if(a==='logout'){closeMenu();logout();render();toast('👋 ออกจากระบบแล้ว')}
+  });
+  document.addEventListener('click',e=>{if(!e.target.closest('#acct'))closeMenu()});
+  window.addEventListener('storage',e=>{if(e.key===K_USERS||e.key===K_SESS)render()});
+
+  /* ---------- กล่องโต้ตอบ (modal) ---------- */
+  const scrim=$('#mscrim'); let openEl=null,lastFocus=null;
+  const focusables=el=>[...el.querySelectorAll('a[href],button:not([disabled]),input:not([disabled]),[tabindex]:not([tabindex="-1"])')].filter(x=>!x.closest('[hidden]')&&x.offsetParent!==null);
+  function showModal(el,focusSel){
+    closeMenu(); if(openEl) hideModal(true);
+    lastFocus=document.activeElement; openEl=el;
+    el.classList.add('open'); scrim.classList.add('open'); document.body.style.overflow='hidden';
+    setTimeout(()=>{const t=(focusSel&&el.querySelector(focusSel))||el.querySelector('input:not([hidden])')||el;t.focus()},80);
+  }
+  function hideModal(keepScroll){
+    if(!openEl) return;
+    openEl.classList.remove('open'); scrim.classList.remove('open'); openEl=null;
+    if(!keepScroll) document.body.style.overflow='';
+    if(lastFocus&&lastFocus.isConnected&&!keepScroll) lastFocus.focus?.();
+  }
+  document.addEventListener('click',e=>{if(e.target.closest('[data-mclose]')||e.target===scrim)hideModal()});
+  document.addEventListener('keydown',e=>{
+    if(e.key==='Escape'){if(openEl){hideModal();e.stopPropagation()}else if(menuEl()?.classList.contains('open')){closeMenu();box.querySelector('[data-a="menu"]')?.focus()}}
+    if(e.key==='Tab'&&openEl){
+      const f=focusables(openEl); if(!f.length) return;
+      const first=f[0],last=f[f.length-1];
+      if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus()}
+      else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus()}
+    }
+  },true);
+
+  /* ---------- เข้าสู่ระบบ / สมัครสมาชิก ---------- */
+  const authM=$('#authModal'),loginF=$('#loginForm'),signF=$('#signupForm');
+  function setAuthTab(t){
+    authM.querySelectorAll('[data-tab]').forEach(b=>{const on=b.dataset.tab===t;b.classList.toggle('on',on);b.setAttribute('aria-selected',String(on))});
+    loginF.hidden=t!=='login'; signF.hidden=t!=='signup';
+    $('#authTitle').textContent=t==='login'?'เข้าสู่ท่าคันโท สโตร์':'สร้างบัญชีท่าคันโท สโตร์';
+    authM.querySelectorAll('.err').forEach(x=>x.textContent='');
+  }
+  function openAuth(t='login'){
+    loginF.reset();signF.reset(); setAuthTab(t);
+    showModal(authM,t==='login'?'#loginForm input':'#signupForm input');
+  }
+  authM.querySelectorAll('[data-tab]').forEach(b=>b.addEventListener('click',()=>{setAuthTab(b.dataset.tab);(b.dataset.tab==='login'?loginF:signF).querySelector('input').focus()}));
+  authM.addEventListener('click',e=>{
+    const eye=e.target.closest('[data-eye]'); if(!eye) return;
+    const inp=eye.parentElement.querySelector('input'); const show=inp.type==='password';
+    inp.type=show?'text':'password'; eye.setAttribute('aria-label',show?'ซ่อนรหัสผ่าน':'แสดงรหัสผ่าน'); eye.classList.toggle('on',show);
+  });
+  async function submitForm(form,fn){
+    const err=form.querySelector('.err'),btn=form.querySelector('button[type=submit]'),label=btn.textContent;
+    err.textContent=''; btn.disabled=true; btn.textContent='กำลังตรวจสอบ…';
+    try{await fn(new FormData(form))}catch(ex){err.textContent=ex.message||'เกิดข้อผิดพลาด ลองใหม่อีกครั้ง'}
+    finally{btn.disabled=false;btn.textContent=label}
+  }
+  loginF.addEventListener('submit',e=>{e.preventDefault();submitForm(loginF,async d=>{
+    const u=await login(d.get('username'),d.get('password'));
+    hideModal(); render(); toast(`👋 ยินดีต้อนรับกลับมา ${esc(u.name)}`);
+  })});
+  signF.addEventListener('submit',e=>{e.preventDefault();submitForm(signF,async d=>{
+    if(d.get('password')!==d.get('confirm')) throw new Error('รหัสผ่านสองช่องไม่ตรงกัน');
+    await register({name:d.get('name'),username:d.get('username'),password:d.get('password')});
+    hideModal(true); render(); toast('🎉 สมัครสำเร็จแล้ว');
+    openProfile('avatars');
+  })});
+
+  /* ---------- โปรไฟล์: เลือกอวตาร์ / อัปโหลดรูป ---------- */
+  const profM=$('#profModal'),pErr=$('#pErr'),SZ=240;
+  let draft=null;
+  const perr=m=>{pErr.textContent=m||''};
+  function buildGrid(){
+    $('#pAvatars').innerHTML=AVATARS.map(a=>`<button type="button" class="av-opt" data-av="${a.id}" title="${a.name}" aria-label="${a.name}" aria-pressed="false">${avHTML({type:'preset',id:a.id},'100%')}<span class="tick"><svg class="i" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></span></button>`).join('');
+  }
+  function syncDraft(){
+    $('#pPrev').innerHTML=avHTML(draft.avatar,'96px');
+    profM.querySelectorAll('.av-opt').forEach(b=>{const on=draft.avatar.type==='preset'&&draft.avatar.id===b.dataset.av;b.classList.toggle('sel',on);b.setAttribute('aria-pressed',String(on))});
+    $('#pRemove').hidden=draft.avatar.type!=='photo';
+    $('#pPhotoState').textContent=draft.avatar.type==='photo'?'ตอนนี้ใช้รูปที่อัปโหลดเป็นโปรไฟล์':'ยังไม่ได้อัปโหลดรูป (กำลังใช้อวตาร์)';
+  }
+  function setPTab(t){
+    profM.querySelectorAll('[data-ptab]').forEach(b=>{const on=b.dataset.ptab===t;b.classList.toggle('on',on);b.setAttribute('aria-selected',String(on))});
+    $('#pAvatars').hidden=t!=='avatars'; $('#pUpload').hidden=t!=='upload'; perr('');
+  }
+  function openProfile(tab){
+    const u=me(); if(!u) return openAuth('login');
+    draft={name:u.name,avatar:cleanAv(u.avatar)};
+    $('#pName').value=u.name; $('#pUser').textContent='@'+u.username;
+    buildGrid(); resetCrop(); setPTab(tab||'avatars'); syncDraft(); perr('');
+    showModal(profM,'#pName');
+  }
+  profM.querySelectorAll('[data-ptab]').forEach(b=>b.addEventListener('click',()=>setPTab(b.dataset.ptab)));
+  $('#pAvatars').addEventListener('click',e=>{const b=e.target.closest('[data-av]');if(!b)return;draft.avatar={type:'preset',id:b.dataset.av};syncDraft()});
+  $('#pRemove').addEventListener('click',()=>{draft.avatar=randomPreset();syncDraft();resetCrop()});
+  $('#pName').addEventListener('input',e=>{draft.name=e.target.value});
+  $('#pSave').addEventListener('click',()=>{
+    const name=clean($('#pName').value);
+    if(!name) return perr('กรอกชื่อที่แสดง');
+    const users=readUsers(),n=sget(K_SESS),u=n&&users[n];
+    if(!u){hideModal();render();return}
+    u.name=name; u.avatar=draft.avatar;
+    if(!writeUsers(users)) return perr('บันทึกไม่ได้ รูปอาจใหญ่เกินพื้นที่เก็บข้อมูลของเบราว์เซอร์ ลองเลือกอวตาร์แทน');
+    hideModal(); render(); toast('✅ บันทึกโปรไฟล์แล้ว');
+  });
+
+  // ตัดและย่อรูป: ลากเพื่อจัดตำแหน่ง ซูมด้วยแถบเลื่อน แล้วบันทึกเป็น JPEG 256×256 (ผ่านแคนวาส จึงไม่เก็บไฟล์ต้นฉบับ)
+  const cv=$('#pCanvas'),cx=cv.getContext('2d'),zoom=$('#pZoom');
+  const crop={img:null,s:1,min:1,x:0,y:0,drag:null};
+  function clampCrop(){const w=crop.img.width*crop.s,h=crop.img.height*crop.s;crop.x=Math.min(0,Math.max(SZ-w,crop.x));crop.y=Math.min(0,Math.max(SZ-h,crop.y))}
+  function paint(){
+    cx.fillStyle='#fff';cx.fillRect(0,0,SZ,SZ);
+    cx.drawImage(crop.img,crop.x,crop.y,crop.img.width*crop.s,crop.img.height*crop.s);
+    cx.save();cx.fillStyle='rgba(0,0,0,.5)';cx.beginPath();cx.rect(0,0,SZ,SZ);cx.arc(SZ/2,SZ/2,SZ/2-6,0,Math.PI*2,true);cx.fill('evenodd');cx.restore();
+    cx.strokeStyle='rgba(255,255,255,.95)';cx.lineWidth=2;cx.beginPath();cx.arc(SZ/2,SZ/2,SZ/2-6,0,Math.PI*2);cx.stroke();
+  }
+  function resetCrop(){crop.img=null;$('#pCropWrap').hidden=true;$('#pDrop').hidden=false}
+  function startCrop(img){
+    crop.img=img;crop.min=Math.max(SZ/img.width,SZ/img.height);crop.s=crop.min;zoom.value=100;
+    crop.x=(SZ-img.width*crop.s)/2;crop.y=(SZ-img.height*crop.s)/2;
+    $('#pCropWrap').hidden=false;$('#pDrop').hidden=true;perr('');paint();
+  }
+  function loadFile(f){
+    if(!/^image\/(png|jpeg|webp)$/.test(f.type)) return perr('รองรับเฉพาะไฟล์ PNG, JPG หรือ WebP');
+    if(f.size>15*1024*1024) return perr('ไฟล์ใหญ่เกิน 15 MB');
+    const url=URL.createObjectURL(f),img=new Image();
+    img.onload=()=>{URL.revokeObjectURL(url);startCrop(img)};
+    img.onerror=()=>{URL.revokeObjectURL(url);perr('เปิดรูปนี้ไม่ได้ ลองไฟล์อื่น')};
+    img.src=url;
+  }
+  $('#pFile').addEventListener('change',e=>{const f=e.target.files&&e.target.files[0];e.target.value='';if(f)loadFile(f)});
+  const drop=$('#pDrop');
+  ['dragenter','dragover'].forEach(n=>drop.addEventListener(n,e=>{e.preventDefault();drop.classList.add('over')}));
+  ['dragleave','drop'].forEach(n=>drop.addEventListener(n,e=>{e.preventDefault();drop.classList.remove('over')}));
+  drop.addEventListener('drop',e=>{const f=e.dataTransfer&&e.dataTransfer.files[0];if(f)loadFile(f)});
+  zoom.addEventListener('input',()=>{
+    if(!crop.img) return;
+    const ns=crop.min*zoom.value/100,ix=(SZ/2-crop.x)/crop.s,iy=(SZ/2-crop.y)/crop.s;
+    crop.s=ns;crop.x=SZ/2-ix*ns;crop.y=SZ/2-iy*ns;clampCrop();paint();
+  });
+  cv.addEventListener('pointerdown',e=>{if(!crop.img)return;cv.setPointerCapture(e.pointerId);crop.drag={x:e.clientX,y:e.clientY,cx:crop.x,cy:crop.y};cv.classList.add('grab')});
+  cv.addEventListener('pointermove',e=>{
+    if(!crop.drag) return;
+    const k=SZ/cv.getBoundingClientRect().width;
+    crop.x=crop.drag.cx+(e.clientX-crop.drag.x)*k;crop.y=crop.drag.cy+(e.clientY-crop.drag.y)*k;clampCrop();paint();
+  });
+  ['pointerup','pointercancel'].forEach(n=>cv.addEventListener(n,()=>{crop.drag=null;cv.classList.remove('grab')}));
+  $('#pCropCancel').addEventListener('click',resetCrop);
+  $('#pCropApply').addEventListener('click',()=>{
+    if(!crop.img) return;
+    const out=document.createElement('canvas');out.width=out.height=256;const o=out.getContext('2d'),k=256/SZ;
+    o.fillStyle='#fff';o.fillRect(0,0,256,256);
+    o.drawImage(crop.img,crop.x*k,crop.y*k,crop.img.width*crop.s*k,crop.img.height*crop.s*k);
+    draft.avatar={type:'photo',data:out.toDataURL('image/jpeg',.88)};
+    resetCrop();syncDraft();perr('');
+  });
+
+  render();
+  return {AVATARS,open:openAuth,STAFF_URL};
+})();
 
 /* ===================== init ===================== */
 renderStats(); renderOrbit(); renderStories(); renderCharts(); renderShelves(); renderDepts();
